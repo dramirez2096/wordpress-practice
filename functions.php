@@ -69,6 +69,15 @@ add_action('after_setup_theme', function () {
 
 }, 20);
 
+function register_navs() {
+    register_nav_menus(
+        array(
+            'main-menu' => __('Main Menu')
+        )
+    );
+}
+add_action('init', 'register_navs');
+
 
 add_action('rest_api_init', function () {
 	$namespace = 'presspack/v1';
