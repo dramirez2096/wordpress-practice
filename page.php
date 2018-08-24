@@ -15,7 +15,7 @@
 						echo 'this is the blog page';
 					} else {
 						echo 'none of these';
-					}
+					} 
 				?>
 
 				<?php if (have_posts()): while (have_posts()) : the_post();
