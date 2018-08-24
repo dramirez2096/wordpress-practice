@@ -120,3 +120,8 @@ function add_slug_to_body_class($classes) {
     }
     return $classes;
 }
+
+function shift3_front_page_template( $template ) {
+	return is_home() ? '' : $template;
+}
+add_filter( 'frontpage_template',  'shift3_front_page_template' );
