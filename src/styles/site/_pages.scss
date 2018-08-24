@@ -6,8 +6,10 @@
 .header-section{
     height: 100%;
 }
-.body-section{
-    background-color: yellow;
+.home-body-section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .page-section{
