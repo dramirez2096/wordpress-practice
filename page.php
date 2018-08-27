@@ -1,4 +1,4 @@
-<div class="grid-container front-page-grid">
+<div class="grid-container" <?php (is_front_page() && is_home()) ? 'front-page-grid' : 'page-grid' ?>>
 	<section class="header-section">
 		<?php get_header(); ?>
 	</section>
@@ -8,7 +8,7 @@
 			<section class="hero-section" style="background-image: url('<?php echo $thumbnail;?>')">
 				<?php echo 'this is right'; ?>
 			</section>
-		<?php } 
+		<?php }
 			?>
 	<section class="body-section">
 			<!-- section -->

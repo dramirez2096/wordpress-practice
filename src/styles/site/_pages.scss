@@ -3,8 +3,13 @@
     height: 100vh;
     grid-template-rows: 75px 1fr;
 }
+
+.page-grid{
+    // height: 100vh;
+    grid-template-rows: 75px 380px 1fr;
+}
 .header-section{
-    height: 100%;
+    height: 75px;
 }
 .home-body-section{
     display: flex;
