@@ -125,3 +125,49 @@ function shift3_front_page_template( $template ) {
 	return is_home() ? '' : $template;
 }
 add_filter( 'frontpage_template',  'shift3_front_page_template' );
+
+function custom_header_setup() {
+	add_theme_support( 'custom-header', apply_filters( 'custom_header_args', array(
+		'default-image'          => '',
+		'default-text-color'     => '000000',
+		'width'                  => 500,
+		'height'                 => 300,
+		'flex-height'            => true,
+	) ) );
+}
+
+function login_logo() { ?>
+    <style type="text/css">
+        #login h1 a, .login h1 a {
+            background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/src/img/shift3-logo.png);
+		    height:65px;
+		    width:320px;
+		    background-size: auto 100%;
+		    background-repeat: no-repeat;
+        	padding-bottom: 30px;
+        }
+
+        .login, .login-action-login, .wp-core-ui, .locale-en-us{
+            background-image: linear-gradient(
+            to right bottom,
+            hsla(0, 0%, 20%, 0.97),
+            hsla(0, 0%, 20%, 0.97))
+            ,url(/src/img/login-bg.jpg);
+            background-size: cover;
+            background-position: center center;
+        }
+
+        .login #backtoblog a, .login #nav a{
+            color: #fff;
+        }
+
+        #login form, p{
+            border-radius: 3px;
+        }
+
+        form input{
+            border-radius: 5px;
+        }
+    </style>
+<?php }
+add_action( 'login_enqueue_scripts', 'login_logo' );

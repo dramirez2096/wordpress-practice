@@ -2,21 +2,17 @@
 	<section class="header-section">
 		<?php get_header(); ?>
 	</section>
+	<?php
+		if (!is_front_page() && !is_home()) { ?>
+			<?php $thumbnail = get_the_post_thumbnail_url(); ?>
+			<section class="hero-section" style="background-image: url('<?php echo $thumbnail;?>')">
+				<?php echo 'this is right'; ?>
+			</section>
+		<?php } 
+			?>
 	<section class="body-section">
 			<!-- section -->
 			<section class="page-section">
-			<?php
-					if (is_front_page() && is_home()) {
-						the_title();
-						echo 'this is the default home page';
-					} elseif (is_front_page()) {
-						echo 'this is the static home page';
-					} elseif (is_home()) {
-						echo 'this is the blog page';
-					} else {
-						echo 'none of these';
-					} 
-				?>
 
 				<?php if (have_posts()): while (have_posts()) : the_post();
 
